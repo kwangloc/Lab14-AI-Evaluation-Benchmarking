@@ -3,27 +3,35 @@ import json
 import os
 import time
 from engine.runner import BenchmarkRunner
+from engine.llm_judge import LLMJudge
+from engine.retrieval_eval import RetrievalEvaluator
 from agent.main_agent import MainAgent
 
 # Giả lập các components Expert
 class ExpertEvaluator:
+    def __init__(self):
+        self._ret_eval = RetrievalEvaluator()
+
     async def score(self, case, resp): 
         # Giả lập tính toán Hit Rate và MRR
+        expected_ids = case.get("expected_retrieval_ids") or []
+        retrieved_ids = (resp or {}).get("retrieved_ids") or []
+        hit_rate = self._ret_eval.calculate_hit_rate(expected_ids, retrieved_ids)
+        mrr = self._ret_eval.calculate_mrr(expected_ids, retrieved_ids)
         return {
-            "faithfulness": 0.9, 
-            "relevancy": 0.8,
-            "retrieval": {"hit_rate": 1.0, "mrr": 0.5}
+            "faithfulness": 1.0 if hit_rate > 0 else 0.5,
+            "relevancy": mrr,
+            "retrieval": {"hit_rate": hit_rate, "mrr": mrr}
         }
 
 class MultiModelJudge:
-    async def evaluate_multi_judge(self, q, a, gt): 
-        return {
-            "final_score": 4.5, 
-            "agreement_rate": 0.8,
-            "reasoning": "Cả 2 model đồng ý đây là câu trả lời tốt."
-        }
+    def __init__(self):
+        self._judge = LLMJudge()
 
-async def run_benchmark_with_results(agent_version: str):
+    async def evaluate_multi_judge(self, q, a, gt): 
+        return await self._judge.evaluate_multi_judge(q, a, gt)
+
+async def run_benchmark_with_results(agent_version: str, agent=None):
     print(f"🚀 Khởi động Benchmark cho {agent_version}...")
 
     if not os.path.exists("data/golden_set.jsonl"):
@@ -37,7 +45,9 @@ async def run_benchmark_with_results(agent_version: str):
         print("❌ File data/golden_set.jsonl rỗng. Hãy tạo ít nhất 1 test case.")
         return None, None
 
-    runner = BenchmarkRunner(MainAgent(), ExpertEvaluator(), MultiModelJudge())
+    if agent is None:
+        agent = MainAgent()
+    runner = BenchmarkRunner(agent, ExpertEvaluator(), MultiModelJudge())
     results = await runner.run_all(dataset)
 
     total = len(results)
@@ -51,15 +61,15 @@ async def run_benchmark_with_results(agent_version: str):
     }
     return results, summary
 
-async def run_benchmark(version):
-    _, summary = await run_benchmark_with_results(version)
+async def run_benchmark(version, agent=None):
+    _, summary = await run_benchmark_with_results(version, agent=agent)
     return summary
 
 async def main():
-    v1_summary = await run_benchmark("Agent_V1_Base")
+    v1_summary = await run_benchmark("Agent_V1_Base", agent=MainAgent(retrieval_mode="dense", use_rerank=False, top_k_search=5, top_k_select=2))
     
     # Giả lập V2 có cải tiến (để test logic)
-    v2_results, v2_summary = await run_benchmark_with_results("Agent_V2_Optimized")
+    v2_results, v2_summary = await run_benchmark_with_results("Agent_V2_Optimized", agent=MainAgent(retrieval_mode="hybrid", use_rerank=True))
     
     if not v1_summary or not v2_summary:
         print("❌ Không thể chạy Benchmark. Kiểm tra lại data/golden_set.jsonl.")
