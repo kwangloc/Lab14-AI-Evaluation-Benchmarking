@@ -1,0 +1,3246 @@
+{
+  "v1": [
+    {
+      "test_case": "Tài liệu này trước đây có tên gì?",
+      "agent_response": "Tài liệu này trước đây có tên \"Approval Matrix for System Access\" [1].",
+      "latency": 13.677,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and correctly states the previous name of the document."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but the inclusion of the reference '[1]' is unnecessary and slightly affects professionalism."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tài liệu này có tên gì hiện tại?",
+      "agent_response": "Tài liệu này hiện tại có tên là \"Access Control SOP\" [1].",
+      "latency": 13.849,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 2,
+            "reasoning": "The answer contains significant inaccuracies as it provides a specific name for the document that is not mentioned in the ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer incorrectly assigns a name to the document, which is not supported by the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Tài liệu này áp dụng cho ai?",
+      "agent_response": "Tài liệu này áp dụng cho tất cả nhân viên, contractor, và third-party vendor [1].",
+      "latency": 14.777,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligns with the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is accurate and grounded but includes an unnecessary reference [1], which slightly affects professionalism."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tài liệu quy định quy trình gì?",
+      "agent_response": "Tài liệu quy định quy trình cấp phép truy cập vào các hệ thống nội bộ của công ty [1].",
+      "latency": 13.558,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligns with the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but includes an unnecessary reference marker '[1]' that is not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ai là người phê duyệt cho Level 2 — Standard Access?",
+      "agent_response": "Line Manager và IT Admin là người phê duyệt cho Level 2 — Standard Access [1].",
+      "latency": 13.65,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the correct approvers for Level 2 — Standard Access."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies Line Manager and IT Admin as the approvers for Level 2 — Standard Access, aligning with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian xử lý cho Level 4 — Admin Access là bao lâu?",
+      "agent_response": "Thời gian xử lý cho Level 4 — Admin Access là 5 ngày làm việc [1].",
+      "latency": 3.347,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and provides the correct processing time for Level 4 — Admin Access."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ai là người phê duyệt yêu cầu Access Request ticket?",
+      "agent_response": "Line Manager là người phê duyệt yêu cầu Access Request ticket [1].",
+      "latency": 3.226,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly identifies the Line Manager as the approver but includes an unnecessary reference '[1]' that is not in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Sau khi IT Admin cấp quyền, nhân viên sẽ nhận thông báo qua email khi nào?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.178,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.2,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant as it does not address the question about when the employee receives the email notification."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and provides no information related to the timing of email notifications after permission is granted."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Quy trình escalation khẩn cấp yêu cầu On-call IT Admin phải được ai phê duyệt trước khi cấp quyền tạm thời?",
+      "agent_response": "Quy trình escalation khẩn cấp yêu cầu On-call IT Admin phải được Tech Lead phê duyệt bằng lời trước khi cấp quyền tạm thời [1].",
+      "latency": 3.218,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer accurately states that the On-call IT Admin must be approved verbally by the Tech Lead before granting temporary permissions, aligning perfectly with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian tối đa mà quyền tạm thời có thể được cấp là bao lâu?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.178,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.3,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not address the question about the maximum duration for temporary rights."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect as it provides no information and does not address the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Khi nào quyền của nhân viên sẽ bị thu hồi nếu họ nghỉ việc?",
+      "agent_response": "Quyền của nhân viên sẽ bị thu hồi ngay trong ngày cuối cùng nếu họ nghỉ việc [1].",
+      "latency": 3.257,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states that the rights of the employee will be revoked on their last day of work."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but it lacks the explicit mention that the rights are revoked on the last day of employment, which is present in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian điều chỉnh quyền khi nhân viên chuyển bộ phận là bao lâu?",
+      "agent_response": "Thời gian điều chỉnh quyền khi nhân viên chuyển bộ phận là trong 3 ngày làm việc [1].",
+      "latency": 2.928,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "IT Security thực hiện access review mỗi bao lâu?",
+      "agent_response": "IT Security thực hiện access review mỗi 6 tháng [1].",
+      "latency": 2.94,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Mọi bất thường phải được báo cáo lên CISO trong vòng bao lâu?",
+      "agent_response": "Mọi bất thường phải được báo cáo lên CISO trong vòng 24 giờ [1].",
+      "latency": 2.955,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer accurately states the reporting timeframe of 24 hours and is properly grounded in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hệ thống ticket nào được sử dụng trong dự án IT-ACCESS?",
+      "agent_response": "Hệ thống ticket được sử dụng trong dự án IT-ACCESS là Jira [1].",
+      "latency": 2.985,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies Jira as the ticket system used in the IT-ACCESS project and is fully accurate and professional."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Email liên hệ cho dự án IT-ACCESS là gì?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.273,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.3,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is completely incorrect as it does not provide the requested email address and states a lack of data instead."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect as it provides no relevant information and does not match the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Nhân viên có dưới 3 năm kinh nghiệm được nghỉ phép năm bao nhiêu ngày?",
+      "agent_response": "Nhân viên có dưới 3 năm kinh nghiệm được nghỉ phép năm 12 ngày [1].",
+      "latency": 3.433,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the correct number of annual leave days for employees with less than 3 years of experience."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Nếu nghỉ ốm trên 3 ngày liên tiếp, nhân viên cần gì?",
+      "agent_response": "Nhân viên cần giấy tờ y tế từ bệnh viện nếu nghỉ ốm trên 3 ngày liên tiếp [1].",
+      "latency": 3.311,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly addresses the requirement for medical documentation when an employee is absent due to illness for more than three consecutive days."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Nhân viên cần gửi yêu cầu nghỉ phép trước bao nhiêu ngày làm việc?",
+      "agent_response": "Nhân viên cần gửi yêu cầu nghỉ phép ít nhất 3 ngày làm việc trước ngày nghỉ [1].",
+      "latency": 3.79,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligned with the ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the minimum 3-day notice period but includes an unnecessary placeholder [1], which slightly affects clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Trong vòng bao lâu Line Manager phải phê duyệt hoặc từ chối yêu cầu nghỉ phép?",
+      "agent_response": "Line Manager phải phê duyệt hoặc từ chối yêu cầu nghỉ phép trong vòng 1 ngày làm việc [1].",
+      "latency": 3.79,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Điều kiện nào cần có để làm thêm giờ?",
+      "agent_response": "Làm thêm giờ phải được Line Manager phê duyệt trước bằng văn bản [1].",
+      "latency": 3.504,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth regarding the requirement for overtime approval."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the key condition but includes a reference marker [1] that is unnecessary and not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hệ số lương làm thêm vào ngày lễ là bao nhiêu?",
+      "agent_response": "Hệ số lương làm thêm vào ngày lễ là 300% lương giờ tiêu chuẩn [1].",
+      "latency": 3.023,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Nhân viên có thể làm remote tối đa bao nhiêu ngày trong tuần?",
+      "agent_response": "Nhân viên có thể làm remote tối đa 2 ngày/tuần [1].",
+      "latency": 3.102,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ngày nào là ngày onsite bắt buộc theo lịch team?",
+      "agent_response": "Ngày onsite bắt buộc theo lịch team là Thứ 3 và Thứ 5 [1].",
+      "latency": 3.678,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the mandatory onsite days as Tuesday and Thursday."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states the required onsite days as Thứ 3 và Thứ 5, fully aligning with the ground truth and maintaining a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Giờ làm việc của công ty là gì?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.908,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not provide any information about the company's working hours."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect because it claims insufficient data, whereas the ground truth provides specific working hours."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Email liên hệ của phòng nhân sự là gì?",
+      "agent_response": "Email liên hệ của phòng nhân sự là hr@company.internal [1].",
+      "latency": 4.006,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and provides the correct email address for the HR department."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Mật khẩu cần thay đổi định kỳ không?",
+      "agent_response": "Có. Mật khẩu phải được thay đổi mỗi 90 ngày. Hệ thống sẽ nhắc nhở 7 ngày trước khi hết hạn [1].",
+      "latency": 4.123,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but includes additional information about reminders that is not in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tài khoản bị khóa sau bao nhiêu lần đăng nhập sai?",
+      "agent_response": "Tài khoản bị khóa sau 5 lần đăng nhập sai liên tiếp [1].",
+      "latency": 4.107,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the number of failed login attempts leading to account lock, but includes an unnecessary '[1]' which slightly affects clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Công ty sử dụng phần mềm VPN nào?",
+      "agent_response": "Công ty sử dụng phần mềm VPN Cisco AnyConnect [1].",
+      "latency": 4.095,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, correctly identifying the VPN software used by the company."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies the VPN software as Cisco AnyConnect and is fully accurate and professional."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Mỗi tài khoản được kết nối VPN trên tối đa bao nhiêu thiết bị cùng lúc?",
+      "agent_response": "Mỗi tài khoản được kết nối VPN trên tối đa 2 thiết bị cùng lúc [1].",
+      "latency": 3.995,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tôi cần làm gì để cài phần mềm mới?",
+      "agent_response": "Gửi yêu cầu qua Jira project IT-SOFTWARE. Line Manager phải phê duyệt trước khi IT cài đặt [1].",
+      "latency": 4.978,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the necessary steps for software installation, maintaining a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded but omits the detail that approval must come from the Line Manager before IT installs, which is important for full correctness."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Khi nào sẽ nhận được nhắc nhở gia hạn license phần mềm?",
+      "agent_response": "Nhắc nhở sẽ được gửi 30 ngày trước khi hết hạn license phần mềm [1].",
+      "latency": 4.144,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states when the reminder for software license renewal will be sent."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but it omits the detail that the reminder is specifically about license renewal, not just the license itself."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Laptop mới được cấp sau bao lâu khi vào công ty?",
+      "agent_response": "Laptop được cấp trong ngày onboarding đầu tiên [1].",
+      "latency": 4.143,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligned with the ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer accurately states that the laptop is provided on the first day of onboarding, fully aligned with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Laptop bị hỏng phải báo cáo như thế nào?",
+      "agent_response": "Tạo ticket P2 hoặc P3 tùy mức độ nghiêm trọng và mang thiết bị đến IT Room (tầng 3) để kiểm tra [1].",
+      "latency": 4.56,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully aligned with the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded but includes an unnecessary reference '[1]' that is not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hộp thư đến đầy, phải làm gì?",
+      "agent_response": "Xóa email cũ hoặc yêu cầu tăng dung lượng qua ticket IT-ACCESS. Dung lượng tiêu chuẩn là 50GB [1].",
+      "latency": 4.495,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but the inclusion of the reference [1] is unnecessary and slightly affects professionalism."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Dung lượng hộp thư đến tiêu chuẩn là bao nhiêu?",
+      "agent_response": "Dung lượng hộp thư đến tiêu chuẩn là 50GB [1].",
+      "latency": 3.993,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the standard inbox capacity."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the standard inbox capacity as 50GB and is accurate and professional, but it could be slightly clearer by explicitly mentioning 'dung lượng tiêu chuẩn' refers to the standard capacity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hotline của bộ phận hỗ trợ IT là gì?",
+      "agent_response": "Hotline của bộ phận hỗ trợ IT là ext. 9000, hoạt động từ 8:00 đến 18:00, Thứ 2 đến Thứ 6 [1].",
+      "latency": 3.902,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the hotline number but adds additional information about operating hours that is not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Giờ làm việc của bộ phận hỗ trợ IT là khi nào?",
+      "agent_response": "Giờ làm việc của bộ phận hỗ trợ IT là từ 8:00 đến 18:00, Thứ 2 đến Thứ 6 [1].",
+      "latency": 3.887,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligns with the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Chính sách này áp dụng cho các đơn hàng từ ngày nào?",
+      "agent_response": "Chính sách này áp dụng cho các đơn hàng được đặt kể từ ngày 01/02/2026 [1].",
+      "latency": 3.902,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the effective date of the policy."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but it omits the detail that the policy applies to all orders on the internal system, which is a minor omission."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Đơn hàng đặt trước ngày 01/02/2026 sẽ áp dụng chính sách nào?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.993,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not address the question regarding the policy for pre-orders."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect as it provides no relevant information and does not address the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Khách hàng có bao nhiêu ngày để yêu cầu hoàn tiền kể từ thời điểm xác nhận đơn hàng?",
+      "agent_response": "Khách hàng có 7 ngày làm việc để yêu cầu hoàn tiền kể từ thời điểm xác nhận đơn hàng [1].",
+      "latency": 3.96,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Sản phẩm nào không đủ điều kiện để yêu cầu hoàn tiền?",
+      "agent_response": "Sản phẩm không đủ điều kiện để yêu cầu hoàn tiền nếu:\n- Sản phẩm không bị lỗi do nhà sản xuất.\n- Yêu cầu hoàn tiền được gửi sau 7 ngày làm việc kể từ thời điểm xác nhận đơn hàng.\n- Sản phẩm đã được sử dụng hoặc đã bị mở seal [1].",
+      "latency": 4.571,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.7,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 3.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and includes the key condition about used or unsealed products, but it also introduces additional conditions that may not be universally applicable."
+          },
+          "gpt-4.1-nano": {
+            "score": 3,
+            "reasoning": "The answer partially covers the ground truth but introduces additional conditions not specified, and omits the key point that used or opened seal products are not eligible, making it only partially correct."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Trong bao lâu kể từ thời điểm xác nhận đơn hàng, yêu cầu hoàn tiền phải được gửi?",
+      "agent_response": "Yêu cầu hoàn tiền phải được gửi trong vòng 7 ngày làm việc kể từ thời điểm xác nhận đơn hàng [1].",
+      "latency": 3.97,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.8,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 4.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate but includes the phrase 'ngày làm việc' which may imply a different timeframe than the ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but it specifies 'làm việc' (working days) instead of calendar days, which may cause slight ambiguity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Sản phẩm nào không được hoàn tiền?",
+      "agent_response": "Sản phẩm không được hoàn tiền bao gồm:\n- Sản phẩm thuộc danh mục hàng kỹ thuật số (license key, subscription).\n- Đơn hàng đã áp dụng mã giảm giá đặc biệt theo chương trình khuyến mãi Flash Sale.\n- Sản phẩm đã được kích hoạt hoặc đăng ký tài khoản [1].",
+      "latency": 4.487,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully addresses the question, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer accurately reflects the ground truth but adds specific examples and slightly expands the conditions, maintaining a professional tone with minor omissions."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Khách hàng cần làm gì để yêu cầu hoàn tiền?",
+      "agent_response": "Khách hàng cần đảm bảo sản phẩm bị lỗi do nhà sản xuất, gửi yêu cầu trong vòng 7 ngày làm việc kể từ thời điểm xác nhận đơn hàng, và đơn hàng chưa được sử dụng hoặc chưa bị mở seal [1].",
+      "latency": 4.177,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.4,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 2.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 2,
+            "reasoning": "The answer contains significant inaccuracies regarding the process for requesting a refund and does not mention the requirement to submit a request through the internal ticket system."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer provides incorrect and incomplete information about the refund process, including conditions not specified in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "CS Agent sẽ xem xét yêu cầu trong bao lâu?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.665,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.2,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not provide the correct information regarding the timeframe for the CS Agent's review."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer is incorrect and irrelevant, as it does not address the ground truth provided."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Hoàn tiền qua phương thức nào được áp dụng trong 100% trường hợp đủ điều kiện?",
+      "agent_response": "Hoàn tiền qua phương thức thanh toán gốc được áp dụng trong 100% trường hợp đủ điều kiện [1].",
+      "latency": 3.738,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Giá trị store credit mà khách hàng nhận được khi chọn hoàn tiền qua credit nội bộ là bao nhiêu phần trăm so với số tiền hoàn?",
+      "agent_response": "Giá trị store credit mà khách hàng nhận được khi chọn hoàn tiền qua credit nội bộ là 110% so với số tiền hoàn [1].",
+      "latency": 4.051,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states that the store credit is 110% of the refunded amount, fully aligning with the ground truth and maintaining a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Địa chỉ email liên hệ để yêu cầu hoàn tiền là gì?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.654,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.2,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not provide the correct email address for the refund request."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer is incorrect and provides no relevant information about the contact email for refunds."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Giờ làm việc của bộ phận hỗ trợ là khi nào?",
+      "agent_response": "Giờ làm việc của bộ phận hỗ trợ là từ 8:00 đến 18:00, Thứ 2 đến Thứ 6 [1].",
+      "latency": 3.989,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.5,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 2.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 2,
+            "reasoning": "The answer contains significant inaccuracies regarding the closing time of the support department."
+          },
+          "gpt-4.1-nano": {
+            "score": 3,
+            "reasoning": "The answer is partially correct regarding the working hours but incorrectly states the end time as 18:00 instead of 17:30, and it omits the specific start time of 8:00."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Sự cố nào được phân loại là CRITICAL?",
+      "agent_response": "Sự cố được phân loại là CRITICAL (Khẩn cấp) là sự cố ảnh hưởng toàn bộ hệ thống production và không có giải pháp tạm thời (workaround). Ví dụ: Database sập, API gateway down, toàn bộ người dùng không thể đăng nhập [1].",
+      "latency": 4.09,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer accurately defines a CRITICAL incident, provides relevant examples, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but adds an example not present in the ground truth and slightly rephrases the original definition."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Có bao nhiêu mức độ ưu tiên được định nghĩa trong tài liệu?",
+      "agent_response": "Có bốn mức độ ưu tiên được định nghĩa trong tài liệu: P1 — CRITICAL (Khẩn cấp), P2 — HIGH (Nghiêm trọng), P3 — MEDIUM (Trung bình), và P4 — LOW (Thấp) [1].",
+      "latency": 4.09,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.6,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 3.0,
+        "agreement_rate": 0.5,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 3,
+            "reasoning": "The answer provides additional details about each priority level, which are not included in the ground truth, making it partially correct but slightly overextended."
+          }
+        },
+        "status": "conflict"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian phản hồi ban đầu của Ticket P1 là bao lâu?",
+      "agent_response": "Thời gian phản hồi ban đầu của Ticket P1 là 15 phút kể từ khi ticket được tạo [1].",
+      "latency": 3.666,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ticket P2 sẽ tự động escalate sau bao lâu nếu không có phản hồi?",
+      "agent_response": "Ticket P2 sẽ tự động escalate sau 90 phút nếu không có phản hồi [1].",
+      "latency": 3.699,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and provides the correct time frame for escalation."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states the escalation time of 90 minutes and is fully aligned with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Trong vòng bao lâu engineer phải cập nhật tiến độ lên ticket?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 3.715,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.3,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is incorrect and irrelevant as it does not provide the required information about the update frequency."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect because the ground truth specifies that engineers should update progress every 30 minutes, but the response provides no relevant information."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Ai là người phân công engineer xử lý sự cố và trong thời gian bao lâu?",
+      "agent_response": "Lead Engineer là người phân công engineer xử lý sự cố trong vòng 10 phút [1].",
+      "latency": 3.541,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, correctly grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hệ thống ticket được sử dụng trong dự án IT-SUPPORT là gì?",
+      "agent_response": "Hệ thống ticket được sử dụng trong dự án IT-SUPPORT là Jira [1].",
+      "latency": 2.93,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, correctly identifies the ticketing system as Jira, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies Jira as the ticket system used in the IT-SUPPORT project and is fully accurate and professional."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Số điện thoại hotline on-call là gì?",
+      "agent_response": "Số điện thoại hotline on-call là ext. 9999 [1].",
+      "latency": 2.786,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.8,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate but lacks the information about the hotline's 24/7 operation."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the hotline on-call number as ext. 9999, but omits the important detail that it operates 24/7."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Cập nhật SLA P1 resolution trong phiên bản nào và thời gian mới là bao lâu?",
+      "agent_response": "Cập nhật SLA P1 resolution trong phiên bản v2026.1 và thời gian mới là 4 giờ [1].",
+      "latency": 3.484,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the version v2026.1 and the new resolution time of 4 hours, but it lacks explicit mention of the previous resolution time of 6 hours, making it slightly incomplete."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Quy trình escalation tự động được thêm vào phiên bản nào?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.792,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.3,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer does not provide any relevant information and fails to address the question."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect as it provides no information and does not address the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    }
+  ],
+  "v2": [
+    {
+      "test_case": "Tài liệu này trước đây có tên gì?",
+      "agent_response": "Approval Matrix for System Access [1].",
+      "latency": 2.011,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.4,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 2.0,
+        "agreement_rate": 0.25,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and correctly identifies the previous name of the document."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer provides the correct previous name but includes an extraneous '[1]' which is unnecessary and may indicate hallucination."
+          }
+        },
+        "status": "conflict"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Tài liệu này có tên gì hiện tại?",
+      "agent_response": "Tài liệu này hiện tại có tên là \"Approval Matrix for System Access\" [1].",
+      "latency": 2.115,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 2,
+            "reasoning": "The answer contains significant inaccuracies as it provides a specific title for the document that is not mentioned in the ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer incorrectly assigns a title to the document despite the ground truth indicating it is not mentioned."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Tài liệu này áp dụng cho ai?",
+      "agent_response": "Tài liệu này áp dụng cho tất cả nhân viên, contractor, và third-party vendor [1].",
+      "latency": 1.916,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligns with the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is accurate and grounded but includes an unnecessary citation marker '[1]' that is not present in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tài liệu quy định quy trình gì?",
+      "agent_response": "Tài liệu quy định quy trình cấp phép truy cập vào các hệ thống nội bộ của công ty [1].",
+      "latency": 2.457,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but includes an unnecessary reference marker '[1]' that is not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ai là người phê duyệt cho Level 2 — Standard Access?",
+      "agent_response": "Line Manager và IT Admin là người phê duyệt cho Level 2 — Standard Access [1].",
+      "latency": 2.497,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the correct approvers for Level 2 — Standard Access."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies Line Manager and IT Admin as the approvers for Level 2 — Standard Access, aligning with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian xử lý cho Level 4 — Admin Access là bao lâu?",
+      "agent_response": "Thời gian xử lý cho Level 4 — Admin Access là 5 ngày làm việc [1].",
+      "latency": 2.225,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ai là người phê duyệt yêu cầu Access Request ticket?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.342,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not address the question about who approves the Access Request ticket."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer claims insufficient data, but the ground truth clearly states that the Line Manager approves the request, making the response inaccurate."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Sau khi IT Admin cấp quyền, nhân viên sẽ nhận thông báo qua email khi nào?",
+      "agent_response": "Nhân viên sẽ nhận thông báo qua email khi quyền được cấp sau khi IT Admin hoàn tất việc kiểm tra compliance và cấp quyền [1].",
+      "latency": 2.386,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.7,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 3.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate but includes an unnecessary detail about compliance checks that may not be relevant to the core question."
+          },
+          "gpt-4.1-nano": {
+            "score": 3,
+            "reasoning": "The answer adds an unnecessary step about compliance check that is not mentioned in the ground truth, making it partially correct but slightly off."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Quy trình escalation khẩn cấp yêu cầu On-call IT Admin phải được ai phê duyệt trước khi cấp quyền tạm thời?",
+      "agent_response": "Quy trình escalation khẩn cấp yêu cầu On-call IT Admin phải được Tech Lead phê duyệt bằng lời trước khi cấp quyền tạm thời [1].",
+      "latency": 2.503,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer accurately states that the On-call IT Admin must be approved verbally by the Tech Lead before granting temporary permissions, aligning perfectly with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian tối đa mà quyền tạm thời có thể được cấp là bao lâu?",
+      "agent_response": "Thời gian tối đa mà quyền tạm thời có thể được cấp là 24 giờ [2].",
+      "latency": 2.449,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": 1.0,
+        "relevancy": 0.75
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states the maximum duration of 24 hours and is properly grounded in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Khi nào quyền của nhân viên sẽ bị thu hồi nếu họ nghỉ việc?",
+      "agent_response": "Quyền của nhân viên sẽ bị thu hồi ngay trong ngày cuối cùng khi họ nghỉ việc [1].",
+      "latency": 2.301,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states that the rights of the employee will be revoked on their last day of work."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but it could be clearer by explicitly stating 'ngày cuối cùng của nhân viên' without additional wording."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian điều chỉnh quyền khi nhân viên chuyển bộ phận là bao lâu?",
+      "agent_response": "Thời gian điều chỉnh quyền khi nhân viên chuyển bộ phận là trong 3 ngày làm việc [1].",
+      "latency": 2.488,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "IT Security thực hiện access review mỗi bao lâu?",
+      "agent_response": "IT Security thực hiện access review mỗi 6 tháng [1].",
+      "latency": 2.114,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Mọi bất thường phải được báo cáo lên CISO trong vòng bao lâu?",
+      "agent_response": "Mọi bất thường phải được báo cáo lên CISO trong vòng 24 giờ [1].",
+      "latency": 2.196,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hệ thống ticket nào được sử dụng trong dự án IT-ACCESS?",
+      "agent_response": "Hệ thống ticket được sử dụng trong dự án IT-ACCESS là Jira [1].",
+      "latency": 2.218,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 1.0,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies Jira as the ticket system used in the IT-ACCESS project and is fully accurate and professional."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Email liên hệ cho dự án IT-ACCESS là gì?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.214,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.2,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is completely incorrect as it does not provide the requested email address and states a lack of data instead."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer is incorrect and provides no relevant information about the contact email for IT-ACCESS."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Nhân viên có dưới 3 năm kinh nghiệm được nghỉ phép năm bao nhiêu ngày?",
+      "agent_response": "Nhân viên có dưới 3 năm kinh nghiệm được nghỉ phép năm 12 ngày [1].",
+      "latency": 2.274,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the correct number of annual leave days for employees with less than 3 years of experience."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Nếu nghỉ ốm trên 3 ngày liên tiếp, nhân viên cần gì?",
+      "agent_response": "Nếu nghỉ ốm trên 3 ngày liên tiếp, nhân viên cần giấy tờ y tế từ bệnh viện [1].",
+      "latency": 2.342,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly addresses the requirement for medical documentation when an employee is absent due to illness for more than three consecutive days."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Nhân viên cần gửi yêu cầu nghỉ phép trước bao nhiêu ngày làm việc?",
+      "agent_response": "Nhân viên cần gửi yêu cầu nghỉ phép ít nhất 3 ngày làm việc trước ngày nghỉ [1].",
+      "latency": 2.326,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the required notice period of 3 days, but the inclusion of [1] is unnecessary and slightly reduces clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Trong vòng bao lâu Line Manager phải phê duyệt hoặc từ chối yêu cầu nghỉ phép?",
+      "agent_response": "Line Manager phải phê duyệt hoặc từ chối yêu cầu nghỉ phép trong vòng 1 ngày làm việc [1].",
+      "latency": 2.362,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Điều kiện nào cần có để làm thêm giờ?",
+      "agent_response": "Làm thêm giờ phải được Line Manager phê duyệt trước bằng văn bản [1].",
+      "latency": 1.996,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth with a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the key condition but includes an unnecessary reference '[1]' that is not in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hệ số lương làm thêm vào ngày lễ là bao nhiêu?",
+      "agent_response": "Hệ số lương làm thêm vào ngày lễ là 300% lương giờ tiêu chuẩn [1].",
+      "latency": 2.341,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Nhân viên có thể làm remote tối đa bao nhiêu ngày trong tuần?",
+      "agent_response": "Nhân viên có thể làm remote tối đa 2 ngày/tuần [1].",
+      "latency": 2.153,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states the maximum remote work days as per the ground truth and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ngày nào là ngày onsite bắt buộc theo lịch team?",
+      "agent_response": "Ngày onsite bắt buộc theo lịch team là Thứ 3 và Thứ 5 [1].",
+      "latency": 2.366,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the mandatory onsite days as Tuesday and Thursday."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states the required onsite days as Thứ 3 and Thứ 5, fully aligned with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Giờ làm việc của công ty là gì?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 1.988,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant as it does not provide any information about the company's working hours."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer claims insufficient data, but the ground truth provides specific working hours, making the response inaccurate."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Email liên hệ của phòng nhân sự là gì?",
+      "agent_response": "Email liên hệ của phòng nhân sự là hr@company.internal [1].",
+      "latency": 1.94,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and provides the correct email contact for the HR department."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Mật khẩu cần thay đổi định kỳ không?",
+      "agent_response": "Có. Mật khẩu phải được thay đổi mỗi 90 ngày. Hệ thống sẽ nhắc nhở 7 ngày trước khi hết hạn [1].",
+      "latency": 2.812,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but includes additional information about reminders that is not in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tài khoản bị khóa sau bao nhiêu lần đăng nhập sai?",
+      "agent_response": "Tài khoản bị khóa sau 5 lần đăng nhập sai liên tiếp [1].",
+      "latency": 1.966,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the number of failed login attempts leading to account lock, but includes an unnecessary '[1]' which slightly affects clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Công ty sử dụng phần mềm VPN nào?",
+      "agent_response": "Công ty sử dụng phần mềm VPN Cisco AnyConnect [1].",
+      "latency": 2.299,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and correctly identifies the VPN software used by the company."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly identifies the VPN software as Cisco AnyConnect and is accurate and professional."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Mỗi tài khoản được kết nối VPN trên tối đa bao nhiêu thiết bị cùng lúc?",
+      "agent_response": "Mỗi tài khoản được kết nối VPN trên tối đa 2 thiết bị cùng lúc [1].",
+      "latency": 1.955,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Tôi cần làm gì để cài phần mềm mới?",
+      "agent_response": "Gửi yêu cầu qua Jira project IT-SOFTWARE. Line Manager phải phê duyệt trước khi IT cài đặt [1].",
+      "latency": 2.112,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the necessary steps for software installation, maintaining a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded but omits the detail that approval must come from the Line Manager before IT installs, which is important for completeness."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Khi nào sẽ nhận được nhắc nhở gia hạn license phần mềm?",
+      "agent_response": "Nhắc nhở sẽ được gửi 30 ngày trước khi hết hạn license phần mềm [1].",
+      "latency": 2.353,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states when the reminder for software license renewal will be sent."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but it omits the detail that the reminder is specifically about license renewal, not just the license expiring."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Laptop mới được cấp sau bao lâu khi vào công ty?",
+      "agent_response": "Laptop được cấp trong ngày onboarding đầu tiên [1].",
+      "latency": 2.333,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer accurately states that the laptop is provided on the first day of onboarding, aligning perfectly with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Laptop bị hỏng phải báo cáo như thế nào?",
+      "agent_response": "Laptop bị hỏng phải báo cáo bằng cách tạo ticket P2 hoặc P3 tùy mức độ nghiêm trọng và mang thiết bị đến IT Room (tầng 3) để kiểm tra [1].",
+      "latency": 2.642,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but the reference to [1] is unnecessary and slightly affects professionalism."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hộp thư đến đầy, phải làm gì?",
+      "agent_response": "Xóa email cũ hoặc yêu cầu tăng dung lượng qua ticket IT-ACCESS. Dung lượng tiêu chuẩn là 50GB [1].",
+      "latency": 2.237,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but the reference to [1] is unnecessary and slightly affects professionalism."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Dung lượng hộp thư đến tiêu chuẩn là bao nhiêu?",
+      "agent_response": "Dung lượng hộp thư đến tiêu chuẩn là 50GB [1].",
+      "latency": 2.546,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the standard inbox capacity."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the standard inbox capacity as 50GB and is accurate and professional, but it could be slightly clearer by explicitly mentioning 'dung lượng hộp thư đến' to match the question precisely."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hotline của bộ phận hỗ trợ IT là gì?",
+      "agent_response": "Hotline của bộ phận hỗ trợ IT là ext. 9000 trong giờ làm việc từ 8:00 đến 18:00, Thứ 2 đến Thứ 6. Ngoài giờ, hotline khẩn cấp là ext. 9999 [1].",
+      "latency": 3.013,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.8,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and provides additional relevant information, but it includes a detail about an emergency hotline that may not be part of the original ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer provides correct information about the hotline ext. 9000 but adds additional details not present in the ground truth, which slightly affects its alignment."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Giờ làm việc của bộ phận hỗ trợ IT là khi nào?",
+      "agent_response": "Giờ làm việc của bộ phận hỗ trợ IT là từ 8:00 đến 18:00, Thứ 2 đến Thứ 6 [1].",
+      "latency": 2.72,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully aligns with the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Chính sách này áp dụng cho các đơn hàng từ ngày nào?",
+      "agent_response": "Chính sách này áp dụng cho tất cả các đơn hàng được đặt trên hệ thống nội bộ kể từ ngày 01/02/2026 [1].",
+      "latency": 2.426,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but includes an unnecessary reference marker '[1]' that is not present in the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Đơn hàng đặt trước ngày 01/02/2026 sẽ áp dụng chính sách nào?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.353,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.3,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 1.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not address the question regarding the policy for pre-orders."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer is incorrect as it provides no relevant information and does not address the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Khách hàng có bao nhiêu ngày để yêu cầu hoàn tiền kể từ thời điểm xác nhận đơn hàng?",
+      "agent_response": "Khách hàng có 7 ngày để yêu cầu hoàn tiền kể từ thời điểm xác nhận đơn hàng [1], [2].",
+      "latency": 2.552,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and clearly states the correct timeframe for requesting a refund."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the 7-day period but includes unnecessary references [1], [2], which are not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Sản phẩm nào không đủ điều kiện để yêu cầu hoàn tiền?",
+      "agent_response": "Sản phẩm không đủ điều kiện để yêu cầu hoàn tiền bao gồm:\n- Sản phẩm thuộc danh mục hàng kỹ thuật số (license key, subscription) [2].\n- Đơn hàng đã áp dụng mã giảm giá đặc biệt theo chương trình khuyến mãi Flash Sale [2].\n- Sản phẩm đã được kích hoạt hoặc đăng ký tài khoản [2].",
+      "latency": 3.179,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.4,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 2.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 2,
+            "reasoning": "The answer includes significant inaccuracies regarding the conditions for refund eligibility, as it does not mention the key fact about used products or opened seals."
+          },
+          "gpt-4.1-nano": {
+            "score": 2,
+            "reasoning": "The answer introduces specific conditions not mentioned in the ground truth, leading to inaccuracies and hallucinations."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Trong bao lâu kể từ thời điểm xác nhận đơn hàng, yêu cầu hoàn tiền phải được gửi?",
+      "agent_response": "Yêu cầu hoàn tiền phải được gửi trong vòng 7 ngày kể từ thời điểm xác nhận đơn hàng [1], [2].",
+      "latency": 2.552,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": 0.9,
+        "relevancy": 0.75
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the 7-day timeframe but includes unnecessary references [1], [2], which are not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Sản phẩm nào không được hoàn tiền?",
+      "agent_response": "Sản phẩm không được hoàn tiền bao gồm:\n- Sản phẩm thuộc danh mục hàng kỹ thuật số (license key, subscription).\n- Đơn hàng đã áp dụng mã giảm giá đặc biệt theo chương trình khuyến mãi Flash Sale.\n- Sản phẩm đã được kích hoạt hoặc đăng ký tài khoản [1].",
+      "latency": 2.849,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully addresses the question, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer accurately covers the key categories of non-refundable products but introduces a specific example ('license key, subscription') and a different phrasing ('Flash Sale') that are not explicitly in the ground truth, making it mostly correct with minor deviations."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Khách hàng cần làm gì để yêu cầu hoàn tiền?",
+      "agent_response": "Khách hàng cần gửi yêu cầu qua hệ thống ticket nội bộ với category \"Refund Request\" [2].",
+      "latency": 2.488,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": 0.9,
+        "relevancy": 0.75
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but includes an unnecessary citation '[2]' that is not part of the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "CS Agent sẽ xem xét yêu cầu trong bao lâu?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.321,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.2,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant and does not provide the correct information regarding the timeframe for the CS Agent's review."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer is incorrect and irrelevant, as it does not address the specified timeframe."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Hoàn tiền qua phương thức nào được áp dụng trong 100% trường hợp đủ điều kiện?",
+      "agent_response": "Hoàn tiền qua phương thức thanh toán gốc được áp dụng trong 100% trường hợp đủ điều kiện [1].",
+      "latency": 2.445,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Giá trị store credit mà khách hàng nhận được khi chọn hoàn tiền qua credit nội bộ là bao nhiêu phần trăm so với số tiền hoàn?",
+      "agent_response": "Giá trị store credit mà khách hàng nhận được khi chọn hoàn tiền qua credit nội bộ là 110% so với số tiền hoàn [1].",
+      "latency": 2.461,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is accurate, fully grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Địa chỉ email liên hệ để yêu cầu hoàn tiền là gì?",
+      "agent_response": "Không đủ dữ liệu để trả lời câu hỏi này.",
+      "latency": 2.089,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.2,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 1.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 1,
+            "reasoning": "The answer is irrelevant as it does not provide the requested email address for refund inquiries."
+          },
+          "gpt-4.1-nano": {
+            "score": 1,
+            "reasoning": "The answer is incorrect and does not provide the requested email address, which is known from the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Giờ làm việc của bộ phận hỗ trợ là khi nào?",
+      "agent_response": "Giờ làm việc của bộ phận hỗ trợ là từ 8:00 đến 18:00, Thứ 2 đến Thứ 6 [1].",
+      "latency": 2.432,
+      "ragas": {
+        "hit_rate": 0.0,
+        "mrr": 0.0,
+        "faithfulness": 0.5,
+        "relevancy": 0.0
+      },
+      "judge": {
+        "final_score": 2.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 2,
+            "reasoning": "The answer contains significant inaccuracies regarding the closing time of the support department."
+          },
+          "gpt-4.1-nano": {
+            "score": 3,
+            "reasoning": "The answer is partially correct but incorrectly states the closing time as 18:00 instead of 17:30, and the formatting of days is slightly inconsistent."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "fail"
+    },
+    {
+      "test_case": "Sự cố nào được phân loại là CRITICAL?",
+      "agent_response": "Sự cố được phân loại là CRITICAL (P1) là sự cố ảnh hưởng toàn bộ hệ thống production và không có workaround. Ví dụ: Database sập, API gateway down, toàn bộ người dùng không thể đăng nhập [1].",
+      "latency": 2.706,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer accurately defines a CRITICAL incident, provides relevant examples, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate and grounded, but adds an example ('toàn bộ người dùng không thể đăng nhập') not present in the ground truth, which slightly extends the definition."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Có bao nhiêu mức độ ưu tiên được định nghĩa trong tài liệu?",
+      "agent_response": "Có bốn mức độ ưu tiên được định nghĩa trong tài liệu: P1 — CRITICAL (Khẩn cấp), P2 — HIGH (Nghiêm trọng), P3 — MEDIUM (Trung bình), và P4 — LOW (Thấp) [1].",
+      "latency": 2.626,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.6,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 3.0,
+        "agreement_rate": 0.5,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 3,
+            "reasoning": "The answer provides additional details about each priority level, which is not requested, and the inclusion of [1] is unnecessary; it partially aligns with the ground truth but adds extraneous information."
+          }
+        },
+        "status": "conflict"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Thời gian phản hồi ban đầu của Ticket P1 là bao lâu?",
+      "agent_response": "Thời gian phản hồi ban đầu của Ticket P1 là 15 phút kể từ khi ticket được tạo [1].",
+      "latency": 2.62,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, matches the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ticket P2 sẽ tự động escalate sau bao lâu nếu không có phản hồi?",
+      "agent_response": "Ticket P2 sẽ tự động escalate sau 90 phút nếu không có phản hồi [1].",
+      "latency": 2.107,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and fully grounded in the provided ground truth."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer correctly states the escalation time of 90 minutes and is fully aligned with the ground truth."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Trong vòng bao lâu engineer phải cập nhật tiến độ lên ticket?",
+      "agent_response": "Engineer phải cập nhật tiến độ lên ticket mỗi 30 phút [2].",
+      "latency": 2.219,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": 0.9,
+        "relevancy": 0.75
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate and directly reflects the ground truth provided."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the update interval of 30 minutes, but includes unnecessary '[2]' which may cause confusion."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Ai là người phân công engineer xử lý sự cố và trong thời gian bao lâu?",
+      "agent_response": "Lead Engineer là người phân công engineer xử lý sự cố trong vòng 10 phút [1].",
+      "latency": 2.524,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 1.0,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 5.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, correctly grounded in the ground truth, and maintains a professional tone."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Hệ thống ticket được sử dụng trong dự án IT-SUPPORT là gì?",
+      "agent_response": "Hệ thống ticket được sử dụng trong dự án IT-SUPPORT là Jira [1], [3].",
+      "latency": 2.346,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, correctly identifies the ticketing system as Jira, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly identifies Jira as the ticket system used, but the inclusion of references [1], [3] is unnecessary and slightly reduces clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Số điện thoại hotline on-call là gì?",
+      "agent_response": "Số điện thoại hotline on-call là ext. 9999 [1].",
+      "latency": 2.377,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.8,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.0,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 4,
+            "reasoning": "The answer is mostly accurate but lacks the detail that the hotline operates 24/7."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the hotline on-call number as ext. 9999, but it omits the detail that it operates 24/7."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Cập nhật SLA P1 resolution trong phiên bản nào và thời gian mới là bao lâu?",
+      "agent_response": "Cập nhật SLA P1 resolution trong phiên bản v2026.1 (2026-01-15) và thời gian mới là 4 giờ [1].",
+      "latency": 2.609,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "faithfulness": 0.9,
+        "relevancy": 1.0
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, correctly identifies the version and the new resolution time, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly states the version v2026.1 and the new resolution time of 4 hours, but includes an unnecessary date and a reference marker, slightly reducing clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    },
+    {
+      "test_case": "Quy trình escalation tự động được thêm vào phiên bản nào?",
+      "agent_response": "Quy trình escalation tự động được thêm vào phiên bản v2025.3 (2025-09-01) [2].",
+      "latency": 2.626,
+      "ragas": {
+        "hit_rate": 1.0,
+        "mrr": 0.5,
+        "faithfulness": 0.9,
+        "relevancy": 0.75
+      },
+      "judge": {
+        "final_score": 4.5,
+        "agreement_rate": 1.0,
+        "individual_results": {
+          "gpt-4o-mini": {
+            "score": 5,
+            "reasoning": "The answer is completely accurate, fully grounded in the provided ground truth, and maintains a professional tone."
+          },
+          "gpt-4.1-nano": {
+            "score": 4,
+            "reasoning": "The answer correctly identifies the version v2025.3 but includes an unnecessary date and reference, which slightly affects clarity."
+          }
+        },
+        "status": "consensus"
+      },
+      "status": "pass"
+    }
+  ]
+}

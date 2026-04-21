@@ -34,6 +34,8 @@ class BenchmarkRunner:
             "ragas": ragas_scores,
             "judge": judge_result,
             "tokens": judge_result.get("total_tokens", 0),
+            "agent_tokens": response.get("tokens", {}),
+            "judge_tokens_by_model": judge_result.get("tokens_by_model", {}),
             "status": "fail" if judge_result["final_score"] < 3 else "pass",
         }
 

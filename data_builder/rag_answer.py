@@ -61,6 +61,17 @@ TOP_K_SELECT = 3     # Số chunk gửi vào prompt sau rerank/select (top-3 swe
 LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
+# =============================================================================
+# CHROMADB SINGLETON — created once at import time in the main thread
+# Creating PersistentClient inside worker threads (asyncio.to_thread) breaks
+# ChromaDB 1.5.x Rust bindings. Use this shared instance everywhere.
+# =============================================================================
+import chromadb as _chromadb
+from index import CHROMA_DB_DIR as _CHROMA_DB_DIR, get_embedding  # noqa: E402
+
+_chroma_client = _chromadb.PersistentClient(path=str(_CHROMA_DB_DIR))
+_chroma_collection = _chroma_client.get_collection("rag_lab")
+
 
 # =============================================================================
 # RETRIEVAL — DENSE (Vector Search)
@@ -101,11 +112,7 @@ def retrieve_dense(query: str, top_k: int = TOP_K_SEARCH) -> List[Dict[str, Any]
         # Lưu ý: distances trong ChromaDB cosine = 1 - similarity
         # Score = 1 - distance
     """
-    import chromadb
-    from index import get_embedding, CHROMA_DB_DIR
-
-    client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
-    collection = client.get_collection("rag_lab")
+    collection = _chroma_collection
 
     query_embedding = get_embedding(query)
     results = collection.query(
@@ -164,12 +171,9 @@ def retrieve_sparse(query: str, top_k: int = TOP_K_SEARCH) -> List[Dict[str, Any
     # print("[retrieve_sparse] Chưa implement — Sprint 3")
 
     from rank_bm25 import BM25Okapi
-    import chromadb
-    from index import CHROMA_DB_DIR
 
     # Bước 1: Load tất cả chunks từ ChromaDB
-    client = chromadb.PersistentClient(path=str(CHROMA_DB_DIR))
-    collection = client.get_collection("rag_lab")
+    collection = _chroma_collection
     all_results = collection.get(include=["documents", "metadatas"])
 
     all_docs = all_results["documents"]
@@ -321,8 +325,17 @@ def retrieve_hybrid(
 # Cross-encoder để chấm lại relevance sau search rộng
 # =============================================================================
 
-# Caching model cho rerank để không bị lag khi hệ thống tự động gọi nhiều lần
-_cross_encoder_model = None
+# Lazy-initialized: only loaded when rerank() is first called (use_rerank=True).
+# Avoids ~1-2s startup cost and memory overhead when rerank is disabled.
+from sentence_transformers import CrossEncoder as _CrossEncoder
+_cross_encoder_model: Optional["_CrossEncoder"] = None
+
+
+def _get_cross_encoder() -> "_CrossEncoder":
+    global _cross_encoder_model
+    if _cross_encoder_model is None:
+        _cross_encoder_model = _CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
+    return _cross_encoder_model
 
 def rerank(
     query: str,
@@ -355,23 +368,16 @@ def rerank(
     - Muốn chắc chắn chỉ 3-5 chunk tốt nhất vào prompt
     """
     # TODO Sprint 3: Implement rerank
-    global _cross_encoder_model
-    
     if not candidates:
         return []
 
     print("\n[rerank] Đang chạy cross-encoder reranking để chấm điểm lại candidates...")
     
-    # 1. Khởi tạo model (chỉ load 1 lần đầu tiên)
-    if _cross_encoder_model is None:
-        from sentence_transformers import CrossEncoder
-        _cross_encoder_model = CrossEncoder("cross-encoder/ms-marco-MiniLM-L-6-v2")
-
     # 2. Tạo pairs: [[câu hỏi, văn bản 1], [câu hỏi, văn bản 2], ...]
     pairs = [[query, chunk["text"]] for chunk in candidates]
     
     # 3. Model đưa ra điểm số đánh giá mức độ liên quan thực sự (không chỉ dựa vào từ khóa/vector)
-    scores = _cross_encoder_model.predict(pairs)
+    scores = _get_cross_encoder().predict(pairs)
     
     # 4. Gom cặp candidate và điểm lại, sắp xếp giảm dần (từ cao xuống thấp)
     ranked = sorted(zip(candidates, scores), key=lambda x: x[1], reverse=True)
@@ -434,7 +440,8 @@ Do not include explanations.
 Output strictly as a JSON array with exactly 1 string."""
 
     try:
-        raw_output = call_llm(transform_prompt).strip()
+        raw_output, _ = call_llm(transform_prompt)
+        raw_output = raw_output.strip()
 
         # Robustly extract JSON array in case model wraps it with extra text/markdown.
         json_match = re.search(r"\[[\s\S]*\]", raw_output)
@@ -549,7 +556,7 @@ def call_llm(prompt: str) -> str:
         temperature=0,     # temperature=0 để output ổn định, dễ đánh giá
         max_tokens=512,
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content, response.usage
 
 
 def rag_answer(
@@ -703,7 +710,7 @@ def rag_answer(
         print(f"\n[RAG] Prompt:\n{prompt[:500]}...\n")
 
     # --- Bước 4: Generate ---
-    answer = call_llm(prompt)
+    answer, llm_usage = call_llm(prompt)
 
     # --- Bước 5: Extract sources ---
     sources = list({
@@ -741,6 +748,11 @@ def rag_answer(
         "sources": sources,
         "chunks_used": candidates,
         "config": config,
+        "tokens": {
+            "model": LLM_MODEL,
+            "prompt_tokens": llm_usage.prompt_tokens if llm_usage else 0,
+            "completion_tokens": llm_usage.completion_tokens if llm_usage else 0,
+        },
     }
 
 
@@ -791,14 +803,6 @@ if __name__ == "__main__":
     print("Sprint 2 + 3: RAG Answer Pipeline")
     print("=" * 60)
 
-    # Test queries từ data/test_questions.json
-    # test_queries = [
-    #     "SLA xử lý ticket P1 là bao lâu?",
-    #     "Khách hàng có thể yêu cầu hoàn tiền trong bao nhiêu ngày?",
-    #     "Ai phải phê duyệt để cấp quyền Level 3?",
-    #     "ERR-403-AUTH là lỗi gì?",  # Query không có trong docs → kiểm tra abstain
-    # ]
-    
     test_queries = [
         "SLA xử lý ticket P1 là bao lâu?",
         "Khách hàng có thể yêu cầu hoàn tiền trong bao nhiêu ngày?",
@@ -816,19 +820,3 @@ if __name__ == "__main__":
         except Exception as e:
             print(f"Lỗi: {e}")
 
-    # Uncomment sau khi Sprint 3 hoàn thành:
-    print("\n--- Sprint 3: So sánh strategies ---")
-    compare_retrieval_strategies("Approval Matrix để cấp quyền là tài liệu nào?")
-    compare_retrieval_strategies("ERR-403-AUTH")
-
-    print("\n\nViệc cần làm Sprint 2:")
-    print("  1. Implement retrieve_dense() — query ChromaDB")
-    print("  2. Implement call_llm() — gọi OpenAI hoặc Gemini")
-    print("  3. Chạy rag_answer() với 3+ test queries")
-    print("  4. Verify: output có citation không? Câu không có docs → abstain không?")
-
-    print("\nViệc cần làm Sprint 3:")
-    print("  1. Chọn 1 trong 3 variants: hybrid, rerank, hoặc query transformation")
-    print("  2. Implement variant đó")
-    print("  3. Chạy compare_retrieval_strategies() để thấy sự khác biệt")
-    print("  4. Ghi lý do chọn biến đó vào docs/tuning-log.md")
