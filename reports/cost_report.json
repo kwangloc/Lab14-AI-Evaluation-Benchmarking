@@ -1,0 +1,106 @@
+{
+  "generated_at": "2026-04-21 19:13:55",
+  "pricing_source": "https://openai.com/pricing (USD per 1M tokens)",
+  "v1": {
+    "total_tokens": 52265,
+    "total_cost_usd": 0.071345,
+    "agent": {
+      "total_tokens": 22175,
+      "total_cost_usd": 0.066147,
+      "per_model": {
+        "gpt-4o": {
+          "prompt_tokens": 20747,
+          "completion_tokens": 1428,
+          "total_tokens": 22175,
+          "estimated_cost_usd": 0.066147
+        }
+      }
+    },
+    "judges": {
+      "total_tokens": 30090,
+      "total_cost_usd": 0.005198,
+      "per_model": {
+        "gpt-4o-mini": {
+          "prompt_tokens": 13083,
+          "completion_tokens": 1786,
+          "total_tokens": 14869,
+          "estimated_cost_usd": 0.003034
+        },
+        "gpt-4.1-nano": {
+          "prompt_tokens": 13083,
+          "completion_tokens": 2138,
+          "total_tokens": 15221,
+          "estimated_cost_usd": 0.002164
+        }
+      }
+    }
+  },
+  "v2": {
+    "total_tokens": 68191,
+    "total_cost_usd": 0.111282,
+    "agent": {
+      "total_tokens": 37981,
+      "total_cost_usd": 0.106067,
+      "per_model": {
+        "gpt-4o": {
+          "prompt_tokens": 36499,
+          "completion_tokens": 1482,
+          "total_tokens": 37981,
+          "estimated_cost_usd": 0.106067
+        }
+      }
+    },
+    "judges": {
+      "total_tokens": 30210,
+      "total_cost_usd": 0.005215,
+      "per_model": {
+        "gpt-4o-mini": {
+          "prompt_tokens": 13136,
+          "completion_tokens": 1777,
+          "total_tokens": 14913,
+          "estimated_cost_usd": 0.003037
+        },
+        "gpt-4.1-nano": {
+          "prompt_tokens": 13136,
+          "completion_tokens": 2161,
+          "total_tokens": 15297,
+          "estimated_cost_usd": 0.002178
+        }
+      }
+    }
+  },
+  "combined": {
+    "total_tokens": 120456,
+    "total_cost_usd": 0.182627,
+    "agent": {
+      "total_tokens": 60156,
+      "total_cost_usd": 0.172215,
+      "per_model": {
+        "gpt-4o": {
+          "prompt_tokens": 57246,
+          "completion_tokens": 2910,
+          "total_tokens": 60156,
+          "estimated_cost_usd": 0.172215
+        }
+      }
+    },
+    "judges": {
+      "total_tokens": 60300,
+      "total_cost_usd": 0.010412,
+      "per_model": {
+        "gpt-4o-mini": {
+          "prompt_tokens": 26219,
+          "completion_tokens": 3563,
+          "total_tokens": 29782,
+          "estimated_cost_usd": 0.006071
+        },
+        "gpt-4.1-nano": {
+          "prompt_tokens": 26219,
+          "completion_tokens": 4299,
+          "total_tokens": 30518,
+          "estimated_cost_usd": 0.004341
+        }
+      }
+    }
+  }
+}
