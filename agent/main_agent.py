@@ -72,6 +72,7 @@ class MainAgent:
             "answer": result["answer"],
             "contexts": [c["text"] for c in chunks_used],
             "retrieved_ids": retrieved_ids,
+            "tokens": result.get("tokens", {"model": os.getenv("LLM_MODEL", "gpt-4o-mini"), "prompt_tokens": 0, "completion_tokens": 0}),
             "metadata": {
                 "model": os.getenv("LLM_MODEL", "gpt-4o-mini"),
                 "sources": result.get("sources", []),

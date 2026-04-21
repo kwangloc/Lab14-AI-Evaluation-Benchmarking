@@ -60,11 +60,13 @@ async def _call_judge(model: str, question: str, answer: str, ground_truth: str)
         return {
             "score": score,
             "reasoning": parsed.get("reasoning", ""),
+            "prompt_tokens": usage.prompt_tokens if usage else 0,
+            "completion_tokens": usage.completion_tokens if usage else 0,
             "tokens": usage.total_tokens if usage else 0,
             "model": model,
         }
     except Exception as e:
-        return {"score": 3, "reasoning": f"Judge error: {e}", "tokens": 0, "model": model}
+        return {"score": 3, "reasoning": f"Judge error: {e}", "prompt_tokens": 0, "completion_tokens": 0, "tokens": 0, "model": model}
 
 
 class LLMJudge:
@@ -109,6 +111,10 @@ class LLMJudge:
             "reasoning": {
                 self.judge_a_model: result_a["reasoning"],
                 self.judge_b_model: result_b["reasoning"],
+            },
+            "tokens_by_model": {
+                self.judge_a_model: {"prompt_tokens": result_a["prompt_tokens"], "completion_tokens": result_a["completion_tokens"]},
+                self.judge_b_model: {"prompt_tokens": result_b["prompt_tokens"], "completion_tokens": result_b["completion_tokens"]},
             },
             "total_tokens": result_a["tokens"] + result_b["tokens"],
         }

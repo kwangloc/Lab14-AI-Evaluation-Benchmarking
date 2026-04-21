@@ -440,7 +440,8 @@ Do not include explanations.
 Output strictly as a JSON array with exactly 1 string."""
 
     try:
-        raw_output = call_llm(transform_prompt).strip()
+        raw_output, _ = call_llm(transform_prompt)
+        raw_output = raw_output.strip()
 
         # Robustly extract JSON array in case model wraps it with extra text/markdown.
         json_match = re.search(r"\[[\s\S]*\]", raw_output)
@@ -555,7 +556,7 @@ def call_llm(prompt: str) -> str:
         temperature=0,     # temperature=0 để output ổn định, dễ đánh giá
         max_tokens=512,
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content, response.usage
 
 
 def rag_answer(
@@ -709,7 +710,7 @@ def rag_answer(
         print(f"\n[RAG] Prompt:\n{prompt[:500]}...\n")
 
     # --- Bước 4: Generate ---
-    answer = call_llm(prompt)
+    answer, llm_usage = call_llm(prompt)
 
     # --- Bước 5: Extract sources ---
     sources = list({
@@ -747,6 +748,11 @@ def rag_answer(
         "sources": sources,
         "chunks_used": candidates,
         "config": config,
+        "tokens": {
+            "model": LLM_MODEL,
+            "prompt_tokens": llm_usage.prompt_tokens if llm_usage else 0,
+            "completion_tokens": llm_usage.completion_tokens if llm_usage else 0,
+        },
     }
 
 
