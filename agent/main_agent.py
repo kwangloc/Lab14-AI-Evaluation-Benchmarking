@@ -61,9 +61,10 @@ class MainAgent:
 
         chunks_used = result.get("chunks_used", [])
 
-        # Build retrieved_ids from chunk metadata for retrieval eval (Hit Rate / MRR)
+        # Build retrieved_ids using chunk_id for retrieval eval (Hit Rate / MRR)
+        # Must match expected_retrieval_ids in golden_set.jsonl
         retrieved_ids = [
-            c.get("metadata", {}).get("source", "unknown")
+            c.get("chunk_id") or c.get("metadata", {}).get("source", "unknown")
             for c in chunks_used
         ]
 

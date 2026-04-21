@@ -113,13 +113,19 @@ def retrieve_dense(query: str, top_k: int = TOP_K_SEARCH) -> List[Dict[str, Any]
         n_results=top_k,
         include=["documents", "metadatas", "distances"]
     )
-    # Added: Convert ChromaDB results to list of dict with text, metadata, and score
+    # ChromaDB always returns ids even without include=["ids"]
     retrieved_chunks = []
-    for doc, meta, dist in zip(results["documents"][0], results["metadatas"][0], results["distances"][0]):
+    for chunk_id, doc, meta, dist in zip(
+        results["ids"][0],
+        results["documents"][0],
+        results["metadatas"][0],
+        results["distances"][0],
+    ):
         chunk = {
+            "chunk_id": chunk_id,
             "text": doc,
             "metadata": meta,
-            "score": 1 - dist  # Convert distance to similarity score
+            "score": 1 - dist,
         }
         retrieved_chunks.append(chunk)
 
@@ -168,6 +174,7 @@ def retrieve_sparse(query: str, top_k: int = TOP_K_SEARCH) -> List[Dict[str, Any
 
     all_docs = all_results["documents"]
     all_metas = all_results["metadatas"]
+    all_ids = all_results["ids"]
 
     if not all_docs:
         print("[retrieve_sparse] Không có chunk nào trong index")
@@ -199,6 +206,7 @@ def retrieve_sparse(query: str, top_k: int = TOP_K_SEARCH) -> List[Dict[str, Any
     retrieved_chunks = []
     for idx in top_indices:
         chunk = {
+            "chunk_id": all_ids[idx],
             "text": all_docs[idx],
             "metadata": all_metas[idx],
             "score": float(scores[idx]),
@@ -262,6 +270,7 @@ def retrieve_hybrid(
         rrf_score = dense_weight * (1.0 / (RRF_K + rank + 1))
         if text_key not in doc_scores:
             doc_scores[text_key] = {
+                "chunk_id": chunk.get("chunk_id"),
                 "text": chunk["text"],
                 "metadata": chunk["metadata"],
                 "rrf_score": 0.0,
@@ -276,6 +285,7 @@ def retrieve_hybrid(
         rrf_score = sparse_weight * (1.0 / (RRF_K + rank + 1))
         if text_key not in doc_scores:
             doc_scores[text_key] = {
+                "chunk_id": chunk.get("chunk_id"),
                 "text": chunk["text"],
                 "metadata": chunk["metadata"],
                 "rrf_score": 0.0,
@@ -297,9 +307,10 @@ def retrieve_hybrid(
     results = []
     for doc in sorted_docs:
         results.append({
+            "chunk_id": doc.get("chunk_id"),
             "text": doc["text"],
             "metadata": doc["metadata"],
-            "score": doc["rrf_score"],  # RRF score thay vì cosine similarity
+            "score": doc["rrf_score"],
         })
 
     return results
