@@ -1,0 +1,8 @@
+Ticket P1:
+- Phản hồi ban đầu (first response): 15 phút kể từ khi ticket được tạo.
+- Xử lý và khắc phục (resolution): 4 giờ.
+- Escalation: Tự động escalate lên Senior Engineer nếu không có phản hồi trong 10 phút.
+- Thông báo stakeholder: Ngay khi nhận ticket, update mỗi 30 phút cho đến khi resolve.
+
+Ticket P2:
+- Phản hồi ban đầu: 2 giờ.
