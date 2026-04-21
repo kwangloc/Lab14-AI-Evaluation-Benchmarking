@@ -1,6 +1,8 @@
+data_builder/chroma_db/
+
 venv/
 .env
 __pycache__/
 *.pyc
 .DS_Store
-reports/
+references/
